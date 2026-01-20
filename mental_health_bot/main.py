@@ -22,13 +22,15 @@ def main():
     logger.info("Database tables created or already exist.")
 
     # Load environment variables
-    load_dotenv()
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    load_dotenv(os.path.join(current_dir, '.env'))
     logger.info("Environment variables loaded.")
 
     # Page Config
     setup_ui()
 
-    with open('config.yaml') as file:
+    config_path = os.path.join(current_dir, 'config.yaml')
+    with open(config_path) as file:
         config = yaml.load(file, Loader=SafeLoader)
 
     authenticator = stauth.Authenticate(

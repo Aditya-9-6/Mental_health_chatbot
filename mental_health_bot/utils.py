@@ -1,5 +1,6 @@
 import json
 import streamlit as st
+import os  # Added import
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
@@ -9,7 +10,9 @@ from constants import CRISIS_KEYWORDS
 @st.cache_resource
 def load_knowledge_base():
     try:
-        with open("knowledge_base.json", "r") as f:
+        current_dir = os.path.dirname(os.path.abspath(__file__)) # Added path logic
+        kb_path = os.path.join(current_dir, "knowledge_base.json")
+        with open(kb_path, "r") as f:
             data = json.load(f)
         documents = []
         for item in data:
