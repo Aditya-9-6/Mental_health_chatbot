@@ -1,0 +1,13 @@
+streamlit
+google-generativeai
+python-dotenv
+langchain-google-genai
+langchain-community
+faiss-cpu
+langchain
+plotly
+pandas
+streamlit-authenticator
+PyYAML
+gTTS
+streamlit-mic-recorder

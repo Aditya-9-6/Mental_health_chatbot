@@ -1,0 +1,7 @@
+# To build the Docker image, run the following command in the terminal:
+# docker build -t mental-health-app .
+
+# To run the Docker image, run the following command in the terminal:
+# docker run -p 8501:8501 -e GOOGLE_API_KEY="YOUR_API_KEY" mental-health-app
+# The `--server.port=8501` and `--server.address=0.0.0.0` arguments are now included in the Dockerfile,
+# so you don't need to specify them in the docker run command.

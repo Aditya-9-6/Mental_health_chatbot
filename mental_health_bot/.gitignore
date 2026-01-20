@@ -1,0 +1,25 @@
+# Enviroment Variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.manifest
+*.spec
+
+# Streamlit
+.streamlit/
+secrets.toml
+
+# Data and Logs
+*.log
+mental_health_bot.log
+db.sqlite3
+/data
+
+# Virtual Environment
+venv/
+env/
+.venv/
