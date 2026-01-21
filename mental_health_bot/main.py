@@ -33,6 +33,12 @@ def main():
     with open(config_path) as file:
         config = yaml.load(file, Loader=SafeLoader)
 
+    # Securely inject Google OAuth credentials
+    if "oauth2" in config and "google" in config["oauth2"]:
+        config["oauth2"]["google"]["client_id"] = os.getenv("GOOGLE_CLIENT_ID") or st.secrets.get("GOOGLE_CLIENT_ID")
+        config["oauth2"]["google"]["client_secret"] = os.getenv("GOOGLE_CLIENT_SECRET") or st.secrets.get("GOOGLE_CLIENT_SECRET")
+
+
     authenticator = stauth.Authenticate(
         config['credentials'],
         config['cookie']['name'],

@@ -8,6 +8,15 @@ credentials:
       email: rbriggs@gmail.com
       name: Rebecca Briggs
       password: '$2b$12$E/l.1n2k.V.s1.z.Z.z.Z.z.Z.z.Z.z.Z.z.Z.z.Z.z.Z' # placeholder
+    aditya:
+      email: aditya@gmail.com
+      name: Aditya
+      password: '$2b$12$G2q38f/nAubwrafjJCqkHOrSLTcaNN.ZZS9JyKPXXqjBuJX4yUx8.' # "123"
+    oauth2:
+      google:
+        client_id: null # Set via env var or st.secrets
+        client_secret: null # Set via env var or st.secrets
+        redirect_uri: https://mentalhealthchatbot-jsskghrdrynmrfwpfmn8ru.streamlit.app
 cookie:
   expiry_days: 30
   key: some_signature_key # Must be string
